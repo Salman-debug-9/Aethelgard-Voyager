@@ -68,11 +68,7 @@ Aethelgard doesn't just curate destinations; it curates horizons. This project w
    ```
 
 3. **Configure Environment Variables**:
-   Create a `.env` file in the root directory. You can use `.env.example` as a template:
-   ```bash
-   cp .env.example .env
-   ```
-   Then, update the `.env` file with your OpenAI API key:
+      Update the `.env` file with your OpenAI API key:
    ```env
    OPENAI_API_KEY=sk-your-dedicated-key-here
    ```
@@ -100,15 +96,6 @@ src/
 ├── styles/            # Handcrafted CSS Modules
 └── lib/               # Utility functions and shared logic
 ```
-
----
-
-## 📜 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## ✉️ Contact
-For inquiries regarding bespoke development or project collaboration:
-**Concierge**: [concierge@aethelgard.com](mailto:concierge@aethelgard.com)
-
 ---
 *Aethelgard Collections — Where the Journey Ends, Exploration Begins.*
+
