@@ -1,0 +1,222 @@
+.section {
+    padding: 100px 0;
+    background: #060e1b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(201, 169, 108, 0.05) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.card {
+    width: 100%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 60px;
+    border-radius: 2px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    z-index: 1;
+}
+
+.progressContainer {
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+.progressStep {
+    flex: 1;
+    text-align: center;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.3);
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s ease;
+}
+
+.activeStep {
+    color: #c9a96c;
+    border-bottom-color: #c9a96c;
+}
+
+.heading {
+    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+    color: #c9a96c;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.group {
+    margin-bottom: 32px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 400;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.input,
+.select {
+    width: 100%;
+    padding: 18px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-family: inherit;
+    font-size: 1.1rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.select {
+    cursor: pointer;
+    appearance: none;
+}
+
+.select option {
+    background: #060e1b;
+    color: white;
+}
+
+.input:focus,
+.select:focus {
+    border-bottom-color: #c9a96c;
+    outline: none;
+}
+
+.input::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.btn {
+    width: 100%;
+    padding: 20px;
+    background: #c9a96c;
+    color: #060e1b;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background: #e2c07d;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(201, 169, 108, 0.2);
+}
+
+.backBtn {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-right: 15px;
+    width: auto;
+    padding: 18px 40px;
+}
+
+.backBtn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: white;
+}
+
+.summary {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.payBtn {
+    width: auto;
+    padding: 20px 60px;
+    margin-top: 0;
+}
+
+.confirmation {
+    text-align: center;
+}
+
+.confirmTitle {
+    color: #c9a96c;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 24px;
+}
+
+.refBox {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 2px;
+    margin: 40px 0;
+}
+
+.downloadBtn {
+    background: transparent;
+    color: #c9a96c;
+    border: 1px solid #c9a96c;
+    padding: 18px 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.downloadBtn:hover {
+    background: #c9a96c;
+    color: #060e1b;
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: 40px 24px;
+        margin: 0 20px;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .summary {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
+    .backBtn,
+    .payBtn {
+        width: 100%;
+        margin: 0;
+    }
+}

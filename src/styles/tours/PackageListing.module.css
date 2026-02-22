@@ -1,0 +1,272 @@
+.section {
+    padding: 200px 0;
+    background: var(--primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.mistLayer {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.noise {
+    position: absolute;
+    inset: 0;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.1;
+    mix-blend-mode: overlay;
+    z-index: 2;
+}
+
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+    padding: 0 40px;
+}
+
+.header {
+    margin-bottom: 200px;
+    text-align: left;
+}
+
+.collectionLabel {
+    display: block;
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 12px;
+    margin-bottom: 40px;
+    opacity: 0.6;
+}
+
+.titleMask {
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 8rem;
+    color: var(--white);
+    font-family: var(--font-serif);
+    line-height: 0.9;
+    letter-spacing: -4px;
+    margin: 0;
+}
+
+.subtitle {
+    color: var(--white);
+    opacity: 0.4;
+    max-width: 500px;
+    font-size: 1rem;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 120px 80px;
+}
+
+.card {
+    position: relative;
+    height: 800px;
+}
+
+.cardStaggered {
+    margin-top: 150px;
+}
+
+.cardFrame {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.image {
+    object-fit: cover;
+    filter: brightness(0.7) grayscale(0.2);
+    transition: transform 2s cubic-bezier(0.16, 1, 0.3, 1), filter 1s ease;
+}
+
+.cardFrame:hover .image {
+    transform: scale(1.1);
+    filter: brightness(1) grayscale(0);
+}
+
+.imageOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10, 25, 47, 0.8), transparent);
+    opacity: 0.6;
+}
+
+.coords {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 0.6rem;
+    color: var(--white);
+    letter-spacing: 4px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.6s ease;
+}
+
+.cardFrame:hover .coords {
+    opacity: 0.5;
+    transform: translateY(0);
+}
+
+.overlay {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.locTag {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.labelRow {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.itemLabel {
+    color: var(--accent);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    padding: 4px 12px;
+    border: 1px solid rgba(226, 178, 89, 0.2);
+}
+
+.duration {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.cardTitle {
+    font-size: 3rem;
+    font-family: var(--font-serif);
+    color: var(--white);
+    margin-bottom: 30px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.priceRow {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.priceLabel {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.3);
+    margin-bottom: 5px;
+}
+
+.price {
+    font-size: 2rem;
+    color: var(--accent);
+    font-weight: 700;
+    font-family: var(--font-serif);
+}
+
+.viewBtn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 0;
+    transition: all 0.4s ease;
+}
+
+.decoLine {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 1px;
+    background: var(--accent);
+    opacity: 0.2;
+}
+
+.cardFrame:hover {
+    border-color: rgba(226, 178, 89, 0.3);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+@media (max-width: 1200px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 80px;
+    }
+
+    .card {
+        height: 700px;
+    }
+
+    .cardStaggered {
+        margin-top: 0;
+    }
+
+    .title {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 3.5rem;
+    }
+
+    .card {
+        height: 600px;
+    }
+
+    .cardTitle {
+        font-size: 2.2rem;
+    }
+}

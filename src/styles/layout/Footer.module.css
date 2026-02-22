@@ -1,0 +1,138 @@
+.footer {
+    padding: 150px 50px;
+    background-color: var(--primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 100px;
+}
+
+.logoCol {
+    flex: 1.5;
+}
+
+.logo {
+    font-size: 5rem;
+    color: white;
+    letter-spacing: 20px;
+    margin-bottom: 40px;
+}
+
+.brandNote {
+    font-size: 1.25rem;
+    color: #888;
+    font-family: var(--font-serif);
+    font-style: italic;
+    max-width: 400px;
+    line-height: 2;
+}
+
+.links {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+}
+
+.colTitle {
+    font-size: 0.9rem;
+    color: var(--accent);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    display: block;
+}
+
+.linkList {
+    list-style: none;
+}
+
+.linkItem {
+    margin-bottom: 20px;
+}
+
+.link {
+    font-size: 1rem;
+    color: #666;
+    transition: all 0.4s ease;
+}
+
+.link:hover {
+    color: white;
+    transform: translateX(10px);
+}
+
+.divider {
+    height: 1px;
+    background: var(--accent);
+    opacity: 0.3;
+    margin: 50px 0;
+    transform-origin: left;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    opacity: 0.3;
+}
+
+.socials {
+    display: flex;
+    gap: 40px;
+}
+
+.socialIcon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.socialIcon:hover {
+    background: var(--accent);
+    color: var(--primary);
+    transform: translateY(-10px);
+}
+
+@media (max-width: 1024px) {
+    .top {
+        flex-direction: column;
+        gap: 80px;
+    }
+
+    .links {
+        grid-template-columns: 1fr;
+    }
+
+    .logo {
+        font-size: 3rem;
+    }
+}

@@ -1,0 +1,154 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.scrolled {
+    padding: 20px 60px;
+    background: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(25px);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+}
+
+.logoWrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.logoMark {
+    width: 45px;
+    height: 45px;
+    background: var(--accent);
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.logoWrapper:hover .logoMark {
+    background: white;
+    transform: rotate(45deg);
+}
+
+.logoText {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 8px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.scrolled .logoText {
+    color: var(--accent);
+}
+
+.links {
+    display: flex;
+    gap: 50px;
+}
+
+.link {
+    color: white;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+    opacity: 0.7;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.link:hover {
+    opacity: 1;
+    color: var(--accent);
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    transition: width 0.4s ease;
+}
+
+.link:hover::after {
+    width: 100%;
+}
+
+.bookBtn {
+    background: var(--accent);
+    color: var(--primary);
+    padding: 15px 40px;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+}
+
+.bookBtn:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.mobileToggle {
+    display: none;
+    cursor: pointer;
+    color: white;
+}
+
+.mobileOverlay {
+    position: fixed;
+    inset: 0;
+    background: var(--primary);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobileContent {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.mobileLink {
+    font-size: 2.5rem;
+    color: white;
+    font-family: var(--font-serif);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 1200px) {
+    .links {
+        display: none;
+    }
+
+    .nav {
+        padding: 20px 30px;
+    }
+
+    .mobileToggle {
+        display: block;
+    }
+}

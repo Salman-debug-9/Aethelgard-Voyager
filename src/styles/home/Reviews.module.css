@@ -1,0 +1,137 @@
+.section {
+    padding: 250px 50px;
+    background-color: var(--background);
+    position: relative;
+    overflow: hidden;
+}
+
+.bgScene {
+    position: absolute;
+    inset: -10%;
+    width: 120%;
+    height: 120%;
+    z-index: 1;
+}
+
+.bgImage {
+    object-fit: cover;
+    opacity: 0.1;
+}
+
+.container {
+    position: relative;
+    z-index: 10;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.label {
+    font-size: 0.9rem;
+    color: var(--accent);
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    display: block;
+}
+
+.title {
+    font-size: 6rem;
+    color: var(--primary);
+    margin-bottom: 120px;
+    line-height: 1;
+}
+
+.grid {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 60px 40px;
+    border-radius: 5px;
+    text-align: left;
+    width: 450px;
+    position: relative;
+    will-change: transform;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.05);
+}
+
+.quoteIcon {
+    font-size: 8rem;
+    font-family: var(--font-serif);
+    color: var(--accent);
+    opacity: 0.2;
+    position: absolute;
+    top: -40px;
+    left: 20px;
+    line-height: 1;
+}
+
+.reviewText {
+    font-size: 1.8rem;
+    color: var(--primary);
+    font-family: var(--font-serif);
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 50px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.avatarWrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid white;
+}
+
+.avatar {
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card:hover .avatar {
+    transform: scale(1.2);
+}
+
+.userInfo h4 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: var(--primary);
+    font-family: var(--font-serif);
+}
+
+.stars {
+    display: flex;
+    gap: 5px;
+    color: var(--accent);
+}
+
+@media (max-width: 1200px) {
+    .grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 3.5rem;
+    }
+}

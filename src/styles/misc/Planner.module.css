@@ -1,0 +1,117 @@
+.section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.stepper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.stepDot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ddd;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.stepDotActive {
+    background: var(--primary);
+}
+
+.line {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ddd;
+    z-index: 1;
+}
+
+.progress {
+    height: 100%;
+    background: var(--primary);
+    transition: width 0.5s;
+}
+
+.card {
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+}
+
+.heading {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.input,
+.dateInput {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.budgetRange {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.budgetLabel {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.summary {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.ctaBtn {
+    padding: 15px 30px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.nav {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.backBtn {
+    padding: 15px 30px;
+    border: 1px solid #ddd;
+    background: transparent;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.nextBtn {
+    padding: 15px 30px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+}

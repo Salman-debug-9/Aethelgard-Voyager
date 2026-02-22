@@ -1,0 +1,188 @@
+.heroContainer {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--primary);
+}
+
+.bgLayer {
+    position: absolute;
+    inset: -10%;
+    width: 120%;
+    height: 120%;
+    z-index: 1;
+}
+
+.bgImage {
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+.mistLayer {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: radial-gradient(circle at 40% 50%,
+            rgba(10, 25, 47, 0) 0%,
+            rgba(10, 25, 47, 0.4) 60%,
+            rgba(10, 25, 47, 0.9) 100%);
+    pointer-events: none;
+}
+
+.noise {
+    position: absolute;
+    inset: 0;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.textWrapper {
+    width: 100%;
+}
+
+.revealRow {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--accent);
+    letter-spacing: 8px;
+    font-weight: 600;
+}
+
+.maskContainer {
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.headline {
+    font-size: clamp(4rem, 15vw, 10rem);
+    color: var(--white);
+    margin: 0;
+    line-height: 0.85;
+    letter-spacing: -4px;
+    text-transform: uppercase;
+    font-family: var(--font-serif);
+}
+
+.description {
+    max-width: 600px;
+    font-size: 1.1rem;
+    color: var(--white);
+    line-height: 1.8;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+.statusRow {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.statusItem {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.statusTexts {
+    display: flex;
+    flex-direction: column;
+}
+
+.statusLabel {
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    color: var(--accent);
+    opacity: 0.7;
+    margin-bottom: 4px;
+}
+
+.statusVal {
+    font-size: 1rem;
+    color: var(--white);
+    font-family: var(--font-serif);
+    font-style: italic;
+}
+
+.statusDivider {
+    width: 1px;
+    height: 40px;
+    background: rgba(212, 175, 55, 0.2);
+}
+
+.scrollTip {
+    position: absolute;
+    bottom: 80px;
+    right: 50px;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+    color: var(--white);
+}
+
+.line {
+    width: 30px;
+    height: 1px;
+    background: var(--accent);
+    animation: linePan 3s infinite ease-in-out;
+}
+
+@keyframes linePan {
+
+    0%,
+    100% {
+        transform: scaleX(0.5);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scaleX(1);
+        opacity: 0.8;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 0 30px;
+    }
+
+    .statusRow {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .statusDivider {
+        display: none;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .scrollTip {
+        display: none;
+    }
+}

@@ -1,0 +1,344 @@
+.main {
+    background: var(--primary);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.imageWrapper {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+}
+
+.image {
+    object-fit: cover;
+    filter: brightness(0.8) grayscale(0.2);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .image {
+    transform: scale(1.1);
+    filter: brightness(1) grayscale(0);
+}
+
+.cardOverlay {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 5;
+}
+
+.tag {
+    background: rgba(10, 25, 47, 0.8);
+    backdrop-filter: blur(10px);
+    color: var(--accent);
+    padding: 8px 16px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid rgba(226, 178, 89, 0.2);
+}
+
+.cardContent {
+    padding: 40px;
+}
+
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.dot {
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+.cardTitle {
+    color: var(--white);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-family: var(--font-serif);
+    margin-bottom: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+.cardExcerpt {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    max-width: 90%;
+}
+
+.cardFooter {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.arrow {
+    transition: transform 0.4s ease;
+}
+
+.card:hover .arrow {
+    transform: translateX(8px);
+}
+
+.card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(226, 178, 89, 0.3);
+    transform: translateY(-10px);
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000;
+    background: rgba(6, 14, 27, 0.98);
+    backdrop-filter: blur(20px);
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    pointer-events: auto;
+}
+
+.modalContent {
+    width: 100%;
+    min-height: 100%;
+    background: var(--primary);
+    position: relative;
+    padding-bottom: 100px;
+}
+
+.closeBtn {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    z-index: 10001;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.closeBtn:hover {
+    background: var(--accent);
+    color: var(--primary);
+    transform: rotate(90deg);
+}
+
+.articleHero {
+    position: relative;
+    height: 70vh;
+    width: 100%;
+}
+
+.heroImg {
+    object-fit: cover;
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--primary), transparent);
+}
+
+.heroContent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 100px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    right: 0;
+}
+
+.articleMeta {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    color: var(--accent);
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.articleMeta span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.articleTitle {
+    color: var(--white);
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-family: var(--font-serif);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+}
+
+.articleBody {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 40px;
+}
+
+.articleGrid {
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    gap: 100px;
+}
+
+.mainContent {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    line-height: 1.9;
+    font-weight: 300;
+}
+
+.mainContent p {
+    margin-bottom: 50px;
+}
+
+.articleGallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 80px;
+}
+
+.galleryItem {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.galleryImg {
+    object-fit: cover;
+}
+
+.sidebar {
+    position: sticky;
+    top: 50px;
+    height: fit-content;
+}
+
+.sidebarWidget {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    margin-bottom: 30px;
+}
+
+.sidebarWidget h4 {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+}
+
+.shareRow {
+    display: flex;
+    gap: 25px;
+    color: var(--accent);
+}
+
+.sidebarWidget p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.sidebarBtn {
+    width: 100%;
+    padding: 15px;
+    background: var(--accent);
+    color: var(--primary);
+    border: none;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.sidebarBtn:hover {
+    background: var(--white);
+}
+
+@media (max-width: 1200px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .articleTitle {
+        font-size: 4rem;
+    }
+
+    .articleGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .articleTitle {
+        font-size: 2.5rem;
+    }
+
+    .heroContent {
+        padding: 40px 20px;
+    }
+
+    .closeBtn {
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+}

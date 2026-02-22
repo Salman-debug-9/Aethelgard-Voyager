@@ -1,0 +1,87 @@
+.section {
+    position: relative;
+    padding: 300px 50px;
+    background-color: var(--primary);
+    overflow: hidden;
+    text-align: center;
+}
+
+.bgWrapper {
+    position: absolute;
+    inset: -10%;
+    width: 120%;
+    height: 120%;
+    z-index: 1;
+}
+
+.bgImage {
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(to top, var(--primary) 0%, transparent 100%);
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.label {
+    font-size: 1rem;
+    color: var(--accent);
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    display: block;
+}
+
+.title {
+    font-size: 8rem;
+    color: white;
+    line-height: 1;
+    margin-bottom: 80px;
+    letter-spacing: -5px;
+}
+
+.letter {
+    display: inline-block;
+}
+
+.button {
+    background: var(--accent);
+    color: var(--primary);
+    padding: 25px 80px;
+    border-radius: 100px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    box-shadow: 0 0 50px rgba(197, 160, 89, 0.4);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.button:hover {
+    background: white;
+    transform: scale(1.05);
+    box-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 1024px) {
+    .title {
+        font-size: 4rem;
+    }
+
+    .button {
+        padding: 20px 60px;
+        font-size: 1.1rem;
+    }
+}

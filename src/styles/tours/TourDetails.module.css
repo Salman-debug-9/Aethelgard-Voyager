@@ -1,0 +1,184 @@
+.hero {
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.heroImage {
+    object-fit: cover;
+}
+
+.image {
+    object-fit: cover;
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.heroContent {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    color: white;
+}
+
+.title {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.meta {
+    display: flex;
+    gap: 20px;
+    font-size: 1.2rem;
+}
+
+.metaItem {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    gap: 60px;
+    position: relative;
+}
+
+.stickyCol {
+    flex: 1;
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.gallery {
+    height: 600px;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.mapBox {
+    margin-top: 40px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.mapContainer {
+    height: 300px;
+    background: #eef;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.itineraryCol {
+    flex: 1;
+}
+
+.timeline {
+    border-left: 2px solid #ddd;
+    padding-left: 40px;
+    margin-top: 50px;
+}
+
+.dayItem {
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.dayMarker {
+    position: absolute;
+    left: -49px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary);
+    border: 4px solid white;
+    box-shadow: 0 0 0 2px var(--primary);
+}
+
+.dayLabel {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.dayTitle {
+    font-size: 1.8rem;
+    margin: 10px 0 15px;
+}
+
+.dayDesc {
+    line-height: 1.7;
+    color: #666;
+}
+
+.priceBox {
+    margin-top: 50px;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+}
+
+.inclusions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.checkItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.xItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #999;
+}
+
+.footer {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.totalLabel {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.bookBtn {
+    padding: 15px 40px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+}

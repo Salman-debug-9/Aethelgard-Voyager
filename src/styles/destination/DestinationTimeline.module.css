@@ -1,0 +1,137 @@
+.timelineSection {
+    padding: 150px 20px;
+    background-color: var(--primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.timelineSection::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.04;
+    pointer-events: none;
+}
+
+.heading {
+    text-align: center;
+    font-size: 4rem;
+    color: var(--white);
+    font-family: var(--font-serif);
+    margin-bottom: 120px;
+}
+
+.timelineContainer {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.line {
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    bottom: 50px;
+    width: 1px;
+    background: rgba(212, 175, 55, 0.2);
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+    position: relative;
+    width: 100%;
+}
+
+.itemReverse {
+    flex-direction: row-reverse;
+}
+
+.contentCol {
+    width: 40%;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    padding: 40px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    z-index: 2;
+}
+
+.imageCol {
+    width: 40%;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 4px;
+    position: relative;
+    z-index: 2;
+    filter: grayscale(0.2) contrast(1.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.image {
+    object-fit: cover;
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.iconWrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+.itemTitle {
+    font-size: 1.5rem;
+    color: var(--text);
+    margin-bottom: 10px;
+}
+
+.itemDesc {
+    color: #666;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .line {
+        left: 20px;
+    }
+
+    .item,
+    .itemReverse {
+        flex-direction: column;
+        padding-left: 50px;
+        align-items: flex-start;
+    }
+
+    .iconWrapper {
+        left: 20px;
+        transform: translate(-50%, 0);
+        top: 0;
+    }
+
+    .contentCol,
+    .imageCol {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .imageCol {
+        height: 250px;
+    }
+}

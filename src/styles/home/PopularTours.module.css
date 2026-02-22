@@ -1,0 +1,225 @@
+.section {
+    padding: 160px 0;
+    background-color: var(--primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.mistLayer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.noise {
+    position: absolute;
+    inset: 0;
+    background: url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity: 0.15;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 2;
+}
+
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 100px;
+}
+
+.collectionLabel {
+    font-size: 0.95rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-weight: 700;
+    display: block;
+}
+
+.titleMask {
+    overflow: hidden;
+}
+
+.mainTitle {
+    font-size: 3.5rem;
+    color: white;
+    line-height: 1.1;
+    font-family: var(--font-serif);
+    text-align: right;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+
+.customGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.tourWrapper {
+    height: 700px;
+    position: relative;
+    cursor: pointer;
+}
+
+.cardInner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tourWrapper:hover .cardInner {
+    transform: translateY(-20px);
+}
+
+.visualBox {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.imageReveal {
+    position: absolute;
+    inset: 0;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tourWrapper:hover .imageReveal {
+    transform: scale(1.1);
+}
+
+.tourImg {
+    object-fit: cover;
+    filter: brightness(0.7) grayscale(0.1);
+    transition: filter 0.8s ease;
+}
+
+.tourWrapper:hover .tourImg {
+    filter: brightness(1) grayscale(0);
+}
+
+.cardOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    z-index: 2;
+    transform: translateY(20px);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tourWrapper:hover .cardOverlay {
+    transform: translateY(0);
+}
+
+.metaRow {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.days {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.priceTag {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    color: var(--accent);
+}
+
+.infoBox {
+    padding-top: 30px;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tourName {
+    font-size: 2.2rem;
+    color: white;
+    margin-bottom: 15px;
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+}
+
+.exploreBtn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    cursor: pointer;
+    padding: 0;
+    opacity: 0.4;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+}
+
+
+.tourWrapper:hover .exploreBtn {
+    opacity: 1;
+    gap: 25px;
+    color: var(--accent);
+}
+
+
+@media (max-width: 1200px) {
+    .customGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 60px;
+    }
+
+    .mainTitle {
+        text-align: left;
+        font-size: 2.5rem;
+    }
+
+    .customGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .tourWrapper {
+        height: 500px;
+    }
+}

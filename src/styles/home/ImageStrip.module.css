@@ -1,0 +1,48 @@
+.section {
+    padding: 200px 0;
+    background-color: var(--primary);
+    overflow: hidden;
+    position: relative;
+}
+
+.river {
+    display: flex;
+    gap: 80px;
+    white-space: nowrap;
+    position: relative;
+    z-index: 5;
+}
+
+.imageWrapper {
+    flex-shrink: 0;
+    width: 600px;
+    height: 900px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 60px 120px rgba(0, 0, 0, 0.4);
+    will-change: transform;
+}
+
+.image {
+    object-fit: cover;
+    transition: transform 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.imageWrapper:hover .image {
+    transform: scale(1.15);
+}
+
+.label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15vw;
+    font-family: var(--font-serif);
+    color: white;
+    opacity: 0.03;
+    z-index: 1;
+    pointer-events: none;
+    white-space: nowrap;
+}
